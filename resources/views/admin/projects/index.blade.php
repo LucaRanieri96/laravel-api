@@ -27,7 +27,7 @@
                     <tr class="align-middle">
                         <td scope="row">{{ $project->id }}</td>
                         <td scope="row">
-                            <img height="100" src="{{ asset('storage/' . $project->cover_image) }}" alt="{{$project->title}}">
+                            <img height="100" src="{{ asset( $project->cover_image) }}" alt="{{$project->title}}">
                         </td>
                         <td scope="row">{{ $project->name }}</td>
                         <td scope="row">{{ $project->repoUrl }}</td>

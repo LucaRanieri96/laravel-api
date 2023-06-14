@@ -16,8 +16,9 @@ class ProjectSeeder extends Seeder
    */
   public function run(Faker $faker)
   {
-    for ($i = 0; $i < 2; $i++) {
+    for ($i = 0; $i < 0; $i++) {
       $project = new Project();
+      $project->name = $faker->word();
       $project->slug = Project::generateSlug($project->name);
       $project->repoUrl = Project::generateRepoUrl($project->slug);
       $project->startingDate = date("Y-m-d") . " " . date("H:i:s");

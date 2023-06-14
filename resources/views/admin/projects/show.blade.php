@@ -20,7 +20,7 @@
             <h4>Project image:
                 <br>
                 <span>
-                    <img height="100" src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->title }}">
+                    <img height="100" src="{{ asset( $project->cover_image) }}" alt="{{$project->title}}">
                 </span>
             </h4>
             <hr>
