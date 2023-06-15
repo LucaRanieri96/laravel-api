@@ -21,7 +21,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Auth::user()->projects()->orderByDesc("id")->paginate(12);
+        $projects = Auth::user()->projects()->orderByDesc("id")->get();
         $types = Type::all();
 
         return view("admin.projects.index", compact("projects", "types"));
@@ -60,7 +60,7 @@ class ProjectController extends Controller
 
         $valData['repoUrl'] = Project::generateRepoUrl($valData['slug']);
 
-        $valData["startingDate"] = date("Y-m-d") . " " . date("H:i:s");
+        $valData["startingDate"] = date("Y-m-d");
 
         //dd($valData);
         $valData['user_id'] = Auth::id(1);
@@ -125,7 +125,7 @@ class ProjectController extends Controller
 
         $valData['repoUrl'] = Project::generateRepoUrl($valData['slug']);
 
-        $valData["startingDate"] = date("Y-m-d") . " " . date("H:i:s");
+        $valData["startingDate"] = date("Y-m-d");
 
         
         if ($request->hasFile('cover_image')) {
