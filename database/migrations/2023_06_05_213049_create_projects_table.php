@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('slug', 100);
             $table->string('repoUrl')->nullable();
-            $table->dateTime('startingDate')->nullable();
+            $table->date('startingDate')->nullable();
             $table->string('cover_image')->nullable();
             $table->timestamps();
         });
