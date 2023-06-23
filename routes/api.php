@@ -3,6 +3,7 @@
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\LeadController;
 use App\Http\Controllers\API\ProjectController;
 
 /*
@@ -40,3 +41,4 @@ Route::get('/test', function () {
     //return Project::all();
 }); */
 
+Route::post('/contacts', [LeadController::class, 'store']);

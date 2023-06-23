@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Lead;
 use App\Models\Type;
+use App\Mail\NewLead;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -19,6 +21,12 @@ use App\Http\Controllers\Admin\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/mailable', function(){
+    $lead = Lead::find(1);
+    // TODO: stampa il markdown template
+    return new NewLead($lead);
 });
 
 Route::get('/admin/types', function () {
